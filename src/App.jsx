@@ -1,12 +1,16 @@
 
+
 //Css
 import './App.css'
+import Login from './pages/login/Login'
+
+
 
 function App() {
 
   return (
     <>
-      <h1>Sacade Sistema de Academia para JiuJitsu</h1>
+      <Login />
     </>
   )
 }

@@ -1,11 +1,14 @@
+import React from "react";
 
+//Css
+import * as S from './style/index'
 
 const Login = () => {
 
-    return (
-        
-        <div>Login</div>
-        
+    return ( 
+        <S.Main>
+            aafafafafaLogin
+        </S.Main>  
     )
 }
 

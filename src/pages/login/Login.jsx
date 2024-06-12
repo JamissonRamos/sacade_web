@@ -1,4 +1,4 @@
-import React from "react";
+// import React from "react";
 
 //Css
 import * as S from './style/index'

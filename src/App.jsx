@@ -1,7 +1,6 @@
 
 
-//Css
-import './App.css'
+//Pages
 import Login from './pages/login/Login'
 
 

@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Main = styled.main`
     /* border: 1px solid red; */
-    width: 100vw;
+    /* width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
@@ -14,5 +14,6 @@ export const Main = styled.main`
     @media (max-width: 1440px) {
         border: 1px solid blue;
         padding: 0px;
-    }
+    } */
+
 `

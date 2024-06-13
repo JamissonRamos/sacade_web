@@ -7,7 +7,9 @@ const Login = () => {
 
     return ( 
         <S.Main>
-            aafafafafaLogin
+            <S.Container>
+                ddddddd
+            </S.Container>
         </S.Main>  
     )
 }

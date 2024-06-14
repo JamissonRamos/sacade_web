@@ -37,7 +37,7 @@ export const Container = styled.div`
 `;
 
 export const Panel = styled.div`
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 100%;
     height: 90%;
     display: flex;
@@ -73,14 +73,16 @@ export const PanelLeft = styled.div`
         box-shadow: ${Theme.shadow.sh700};        
     }
     @media (max-width: 425px) {
-        // border: 1px solid blue;
+        border: 1px solid blue;
         height: 28%;
+        gap: .4rem;
+        padding: 0;
         border-radius: 0px 0px 40px 40px;
     }
 `;
 
 export const ContentLeftHeader = styled.div`
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 100%;
     flex: 1.4;
     display: flex;
@@ -92,11 +94,12 @@ export const ContentLeftHeader = styled.div`
             text-align: center;
         }
     @media (max-width: 768px) {
-        // border: 1px solid orange;
-        height: 30%;
+        /* border: 1px solid orange; */
+        height: 24%;
         flex: none;
         justify-content: start;
         gap: 0;
+        padding: 0;
         & p{
             display: none
         }
@@ -105,9 +108,9 @@ export const ContentLeftHeader = styled.div`
 `;
 
 export const ContentBody = styled.div`
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 100%;  
-    flex: 5;
+    flex: 4;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -117,9 +120,9 @@ export const ContentBody = styled.div`
     }
 `;
 export const WrappedImg = styled.div`
-    border: 1px solid blue;
+    /* border: 1px solid blue; */
     width: 100%;
-    flex: 8;
+    flex: 2;
     display: flex;
     justify-content: center;
     align-items: center; 
@@ -131,9 +134,9 @@ export const Img = styled.img`
 `;
 
 export const WrappedButtonGoogleText = styled.div`
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 100%;
-    flex: 2;
+    flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -143,7 +146,7 @@ export const WrappedButtonGoogleText = styled.div`
 `;
 
 export const ContentFooter = styled.div`
-    border: 1px solid red;  
+    /* border: 1px solid red;   */
     width: 100%;
     flex: .4;
     display: flex;

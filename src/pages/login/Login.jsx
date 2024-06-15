@@ -2,6 +2,7 @@
 
 //IMG & ICON
 import logo from "../../assets/login/logo_luta.png";
+import avatar_man from "../../assets/login/avatar_man.png";
 import { FaGoogle } from "react-icons/fa";
 
 //Css
@@ -64,7 +65,17 @@ const Login = () => {
                         </S.ContentFooter>
                     </S.PanelLeft>
                     <S.PanelRight >
-                        Right
+                        <S.ContentRightHeader>
+                            <S.WrappedImg>
+                                <S.Img src={avatar_man} alt="Avatar de um Homem" />
+                            </S.WrappedImg>
+                            <Typography.Headline level="s" color={Theme.colors.green800} >
+                                Fazer Login
+                            </Typography.Headline>
+                        </S.ContentRightHeader>
+                        <S.ContentRightBody>
+                            Body
+                        </S.ContentRightBody>
 
                     </S.PanelRight>
                 </S.Panel>

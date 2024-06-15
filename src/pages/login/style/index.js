@@ -162,12 +162,11 @@ export const PanelRight = styled.div`
     
     /* border: 1px solid Yellow;    */
     flex: 1;
-    padding: 0.8rem ;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
-    gap: 8px;
+    justify-content: start;
+    padding: 0.8rem ;
     background: ${Theme.colors.white800};
     border-radius: 0px 18px 18px 0px;
     box-shadow: ${Theme.shadow.sh700}; 
@@ -180,6 +179,8 @@ export const PanelRight = styled.div`
         position: absolute;
         top: 20%;
         left: 50%;
+        justify-content: end;
+        padding: 0 ;
         transform: translateX(-50%);
         border-radius: 18px;
         overflow: visible; 
@@ -190,4 +191,43 @@ export const PanelRight = styled.div`
         height: 80%; 
         top: 16%;
     }
+`;
+
+export const ContentRightHeader = styled.div`
+    border: 1px solid red;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    @media (max-width: 768px) {
+        border: 1px solid blue;
+        position: absolute;
+        height: 14%;
+        top: -6%;
+        gap: 0rem;
+
+        & h2{
+            display: none;
+        }
+    }
+`;
+
+export const ContentRightBody = styled.div`
+    border: 1px solid red;
+    width: 100%;
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    @media (max-width: 768px) {
+        border: 1px solid red;
+        height: 90%;
+        flex: none;
+        padding-top: 1rem;
+    }
+
+
 `;

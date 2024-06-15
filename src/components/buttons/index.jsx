@@ -1,9 +1,6 @@
 import React from 'react';
 import { StyledButton } from './style';
 
-//variant, color, icon,
-
- //     
 const ButtonCustom = ({ $variant, color = '#1F7EE6', icon, value, onclick }) => {
 
     console.log($variant)

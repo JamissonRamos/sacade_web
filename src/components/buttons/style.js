@@ -23,7 +23,6 @@ const containedStyles = css`
     background-color: ${(props) => props.color};
     border: none;
     color: ${Theme.colors.white800};
-
     &:hover {
         background-color: ${props => {
             const color = props.color;

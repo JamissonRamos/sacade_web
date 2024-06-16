@@ -226,7 +226,7 @@ export const ContentRightBody = styled.div`
         border: 1px solid red;
         height: 90%;
         flex: none;
-        padding-top: 1rem;
+        /* padding-top: 1rem; */
     }
 
 

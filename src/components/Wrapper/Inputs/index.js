@@ -9,7 +9,7 @@ export const WrapperFieldInput = styled.div `
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 0.6rem  0.4rem ;
+    padding: 0.6rem  0.2rem ;
 `
 
 export default WrapperFieldInput;

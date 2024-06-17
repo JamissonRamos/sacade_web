@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
-export const WrapperFieldForm = styled.div `
+export const WrapperFieldLink = styled.div `
     /* border: 1px solid blue; */
     width: 100%;
-    position: relative;
+    max-width: 380px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: end;
     justify-content: center;   
 `
-export default WrapperFieldForm;
+export default WrapperFieldLink;

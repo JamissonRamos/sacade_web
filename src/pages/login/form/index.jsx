@@ -1,4 +1,4 @@
-import React from 'react'
+// import React from 'react'
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -9,11 +9,12 @@ import Form from "../../../components/form"
 import WrapperFieldForm from "../../../components/Wrapper/form"
 import Field from "../../../components/field"
 import HelperText from "../../../components/helper/text";
-import ButtonCustom from "../../../components/buttons";
+import Buttons from '../../../components/buttons';
 import Schema from './validation';
 
 import { MdPerson } from "react-icons/md";
 import { MdLock } from "react-icons/md";
+import WrapperFieldLink from "../../../components/Wrapper/link";
 
 const FormLogin = () => {
 
@@ -50,13 +51,16 @@ const FormLogin = () => {
             setValue={setValue}
             Icon={MdLock}
             placeholder='Digite sua senha'
-            />
-            Esqueceu sua Senha?
+          />
+          <WrapperFieldLink>
+            <Buttons.LinkCustom href="#" color={Theme.colors.green800}>
+              Esqueceu sua Senha ?
+            </Buttons.LinkCustom>
+          </WrapperFieldLink>
           <HelperText > { errors.password?.message } </HelperText>
         </WrapperFieldForm>
-
         <WrapperFieldForm>
-                <ButtonCustom 
+                <Buttons.ButtonCustom 
                   $variant={'outline'} 
                   color={Theme.colors.green800} 
                   value={'Fazer Login'} 

@@ -15,6 +15,10 @@ export const Main = styled.main`
         /* border: 1px solid blue; */
         padding: 0 60px;
     }
+    @media (max-width: 950px) {
+        /* border: 1px solid blue; */
+        padding: 0 30px;
+    }
     @media (max-width: 768px) {
         /* border: 1px solid blue; */
         padding: 0;
@@ -194,7 +198,7 @@ export const PanelRight = styled.div`
 `;
 
 export const ContentRightHeader = styled.div`
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 100%;
     flex: 1;
     display: flex;
@@ -202,20 +206,18 @@ export const ContentRightHeader = styled.div`
     align-items: center;
     justify-content: center; 
     @media (max-width: 768px) {
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
         position: absolute;
-        height: 14%;
+        height: 22%;
         top: -6%;
         gap: 0rem;
 
-        & h2{
-            display: none;
-        }
+        
     }
 `;
 
 export const ContentRightBody = styled.div`
-    border: 1px solid red;
+    /* border: 1px solid red; */
     width: 100%;
     flex: 3;
     display: flex;
@@ -223,7 +225,7 @@ export const ContentRightBody = styled.div`
     align-items: center;
     justify-content: center; 
     @media (max-width: 768px) {
-        border: 1px solid red;
+        /* border: 1px solid red; */
         height: 90%;
         flex: none;
         /* padding-top: 1rem; */

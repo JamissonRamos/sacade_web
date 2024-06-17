@@ -20,7 +20,7 @@ const Label = styled.label`
         left: 14px;
         padding: 0 4px;
         background-color: ${Theme.colors.white800};
-        font-size: .8rem;
+        font-size: .6rem;
         color: ${Theme.colors.green800};
     }
 `;

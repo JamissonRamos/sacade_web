@@ -11,7 +11,8 @@ import * as S from './style/index'
 
 //Components
 import { Typography } from '../../components/Typography'
-import ButtonCustom from "../../components/buttons";
+// import ButtonCustom from "../../components/buttons";
+import Buttons from "../../components/buttons";
 import FormLogin from "./form/index";
 
 
@@ -52,7 +53,7 @@ const Login = () => {
                                 <Typography.Body level={'m'} color={Theme.colors.white800}>
                                     Você também pode fazer o acesso pelo Google, mas o seu email deve estar cadastrado no sistema.
                                 </Typography.Body>
-                                <ButtonCustom 
+                                <Buttons.ButtonCustom 
                                     $variant={'contained'} 
                                     color={Theme.colors.yellow800}
                                     icon={<FaGoogle/>}
@@ -77,7 +78,6 @@ const Login = () => {
                         <S.ContentRightBody>
                             <FormLogin />
                         </S.ContentRightBody>
-
                     </S.PanelRight>
                 </S.Panel>
             </S.Container>

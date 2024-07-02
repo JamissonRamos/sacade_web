@@ -1,23 +1,35 @@
 import { createGlobalStyle } from "styled-components";  
-import { Theme } from "../../theme";
 
 
+/* 
+    -Alterar seletores ou components que vão mudar de acordo a necessidade do projeto;
+
+*/
 const Base = createGlobalStyle`
 
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-
-        font-family: "Roboto", sans-serif;
-        font-size: 16px;
-        line-height: 24px;
-        letter-spacing: 0.5px;
-        font-weight: 400;
-        font-style: normal;
+    body, html {
+        /* border: 1px solid red; */
+        width: 100vw;
+        height: 100vh;
     }
 
-`
+    main {
+        width: 100%;
+        height: 92vh;
+        padding: 0 24px 0 264px;
+        overflow: auto;
+        transition: margin 0.4s; 
+        @media (max-width: 768px) {
+            padding-left: 84px;
+        }
+        @media (max-width: 425px) {
+            height: 86vh;
+            padding: 0;
+            margin: 0 ;
+        }
+    }
+
+`;
 
 
 export default Base;

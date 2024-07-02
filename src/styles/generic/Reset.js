@@ -8,21 +8,13 @@ const Reset =  createGlobalStyle `
 	License: none (public domain)
 	*/
 
+	/* 
+		-Todos os meus seletores vão ser manipulados nesse arquivos;
+		-Manipulações que não serão alteradas de acordo o projeto;
+		-
+	*/
 
-	html, body, div, span, applet, object, iframe,
-	h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-	a, abbr, acronym, address, big, cite, code,
-	del, dfn, em, img, ins, kbd, q, s, samp,
-	small, strike, strong, sub, sup, tt, var,
-	b, u, i, center,
-	dl, dt, dd, ol, ul, li,
-	fieldset, form, label, legend,
-	table, caption, tbody, tfoot, thead, tr, th, td,
-	article, aside, canvas, details, embed, 
-	figure, figcaption, footer, header, hgroup, 
-	menu, nav, output, ruby, section, summary,
-	time, mark, audio, video 
-	{
+	*{
 		margin: 0;
 		padding: 0;
 		border: 0;
@@ -31,6 +23,14 @@ const Reset =  createGlobalStyle `
 		vertical-align: baseline;
 		box-sizing: border-box;
 		overflow: hidden;
+
+		/* Formato Jamisosn */
+		font-family: "Roboto", sans-serif;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 0.5px;
+        font-weight: 400;
+        font-style: normal;
 	}
 
 	/* HTML5 display-role reset for older browsers */
@@ -44,9 +44,10 @@ const Reset =  createGlobalStyle `
 	{
 		line-height: 1;
 	}
-	ol, ul 
+	ol, ul, a
 	{
 		list-style: none;
+		text-decoration: none;
 	}
 	blockquote, q 
 	{

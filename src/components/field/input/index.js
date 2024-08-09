@@ -11,7 +11,7 @@ const Input = styled.input`
     font-size: 1rem; 
     font-weight: 400;
     line-height: 24px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.5px; 
     color: ${Theme.colors.grey800};
     border: 1px solid ${Theme.colors.grey800};
     border-radius: 8px;

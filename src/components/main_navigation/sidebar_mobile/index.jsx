@@ -5,14 +5,13 @@ import ItemSidebarMobile from './itemSidebarMobile/ItemSidebarMobile';
 import SidebarMenuMobile from './sidebarMenuMobile/index';
 import { SidebarData } from '../../../datas/sidebarData';
 
-
-
 const SidebarMobile = () => {
     const [subnav, setSubnav] = useState(false);
     const showSubnav = () => setSubnav(!subnav);
     const toggleSidebar = () => {
         setSubnav(!subnav);
     }
+    
     const filterSubItem = (mainTitle, subTitle = null) => {
         const mainItem = SidebarData.find(item => item.title === mainTitle);
 

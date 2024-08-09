@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from 'react-router-dom';
+import { Theme } from "../../../../theme";
 
 export const WrapArrow = styled(Link)`
     /* border: 1px solid yellow; */
@@ -17,23 +18,11 @@ export const WrapArrow = styled(Link)`
     transition: left 0.4s;
     & > svg {
         font-size: .6em;
-        color: #FFF;
+        color: ${Theme.colors.white800};
     }
     @media (max-width: 768px) {
         display: flex;
         left: ${({$showSidebar}) => $showSidebar ? '62px' : '230px'} ;
     }
     
-    /*     
-
-
-  //box-shadow: ${({$boxShadow}) => $boxShadow} ;
-
-    @media (max-width: 425px) {
-        display: none;
-    } 
-        */
-
-
-
 `;

@@ -6,16 +6,13 @@ const NavItemSidebar = ({item, showSidebar}) => {
   const showSubnav = () => setSubnav(!subnav);
   const handleClick = () => {
     showSubnav();
-    // if (!showSidebar) {
-    //     toggleSidebar();
-    // }
 };
   return (
-    <S.WrapNav subnav={subnav}>
+    <S.WrapNav $subnav={subnav}>
         <S.ItemMenu to={item.path} onClick={item.subNav && showSubnav  }>
           <S.WrapItensMenu>
             <S.IconMenu> {item.icon} </S.IconMenu>
-            <S.LabelMenu showSidebar={showSidebar}> {item.title } </S.LabelMenu>
+            <S.LabelMenu $showSidebar={showSidebar}> {item.title } </S.LabelMenu>
           </S.WrapItensMenu>
           <S.ArrowShowSubNav>
             {
@@ -34,7 +31,7 @@ const NavItemSidebar = ({item, showSidebar}) => {
                         return (
                             <S.DropdownLink to={item.path} key={index} onClick={handleClick}>
                                 <S.IconMenu> {item.icon} </S.IconMenu>
-                                <S.LabelMenu showSidebar={showSidebar}>{ item.title}</S.LabelMenu>
+                                <S.LabelMenu $showSidebar={showSidebar}>{ item.title}</S.LabelMenu>
                             </S.DropdownLink>
                         );
                 })}

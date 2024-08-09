@@ -1,8 +1,7 @@
-
 import styled from "styled-components";
+import { Theme } from "../../../../theme";
 
 export const Wrap = styled.div`
-
     width: 100%;
     height: 86%;
     position: fixed;
@@ -14,8 +13,8 @@ export const Wrap = styled.div`
     justify-content: start;
     padding: 1rem;
     border-radius: 20px 20px 0 0;
-    background-color: #222834;
-    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.30);
+    background-color: ${Theme.colors.blue600};
+    box-shadow: ${Theme.shadow.sh200};
     z-index: 1;
 `;
 
@@ -24,12 +23,10 @@ export const NameMenu = styled.div`
     width: 100%;
     text-align: center;
     padding: 0.4rem ;
-
     & span {
         font-size: 12px;
-        color: #9FA6BC;
+        color: ${Theme.colors.blue600};
     }
-    
 `;
 
 export const NavItem = styled.div`
@@ -39,5 +36,4 @@ export const NavItem = styled.div`
     display: flex;
     flex-direction: column;
     gap: .4rem;
-
 `;

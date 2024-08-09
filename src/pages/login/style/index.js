@@ -2,13 +2,14 @@ import styled from "styled-components";
 import { Theme } from "../../../theme";
 
 export const Main = styled.main`
-    /* border: 1px solid red; */
+    /* border: 1px solid red;  */
     width: 100vw;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 0 120px;
+    margin: 0;
     background-color: ${Theme.colors.white800}; 
     transition: padding 0.4s;    
     @media (max-width: 1024px) {
@@ -147,6 +148,15 @@ export const WrappedButtonGoogleText = styled.div`
     justify-content: space-around;
     gap: 8px;
     text-align: center;
+`;
+export const WrapButton = styled.div`
+    /* border: 1px solid red; */
+    width: 100%;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: .2rem; 
 `;
 
 export const ContentFooter = styled.div`

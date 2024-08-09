@@ -17,15 +17,12 @@ const MainNavigation = () => {
         // Limpeza do evento de escuta ao desmontar o componente
         return () => window.removeEventListener('resize', handleResize);
     }, []);
-
-
     
     return (
         <>
             {
                 isMobile ? <SidebarMobile /> : <SidebarWeb showSidebar={showSidebar} toggleSidebar={toggleSidebar}/>
             }
-            
         </>
     )
     }

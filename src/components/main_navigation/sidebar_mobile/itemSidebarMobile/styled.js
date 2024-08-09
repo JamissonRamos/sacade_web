@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
+import { Theme } from "../../../../theme";
 
 export const Wrap = styled(Link)`
     /* border: 1px solid red; */
@@ -12,13 +13,10 @@ export const Wrap = styled(Link)`
     gap: .4rem;
     padding: 0 .4rem  ;
     text-decoration: none;
-    /* background-color: ${({$subnav}) => $subnav ? '#632ce426' : '#222834'} ;           //#632ce426; //#632ce426 632ce47b */
     &:hover {
         border-radius: 10%;
-
         background-color: #632ce426;
-
-        box-shadow: rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        box-shadow: ${Theme.shadow.sh800};
     }
 `;
 
@@ -29,24 +27,16 @@ export const MenuIcon = styled.div`
     justify-content: center;
     transition: 350ms;
     & svg {
-        /* margin-left: 1rem; */
         font-size: ${({$circule}) => $circule? '28px':' 18px'};
-        color: #9FA6BC;
+        color: ${Theme.colors.grey500};
         transition: 350ms;
-
         &:hover {
-            font-size: ${({$circule}) => $circule? '36px':' 18px'};;
+            font-size: ${({$circule}) => $circule? '36px':' 18px'};
         }
     }
-
-
 `;
 export const Label = styled.label`
-
     font-size: .7em;
     font-weight: 300;
-    color: #9FA6BC;
-    /* @media (max-width: 768px) {
-        display:  ${({ showSidebar }) => showSidebar ? 'none' : 'flex' }; //
-    } */
+    color: ${Theme.colors.grey500};
 `;

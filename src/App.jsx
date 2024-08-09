@@ -1,31 +1,21 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-//Componentes
-import MainHeaderPanel from './components/main_header_panel';
-//Pages
-import { Pages } from './pages'
-import MainNavigation from './components/main_navigation';
+import { BrowserRouter as Router} from 'react-router-dom';
+import AppContent from './components/app_content';
 
 function App() {
 
   return (
     <>
-
       <Router>
-        <MainHeaderPanel />
-        <MainNavigation />
-        <main>
-          <Routes>
-            <Route path="/" element={<Pages.Home />} />
-            <Route path="/alunos" element={<Pages.Alunos />} />
-            <Route path="/pagamentos" element={<Pages.Pagamentos />} />
-            <Route path="/users" element={<Pages.Users />} />
-          </Routes>
-        </main>
+        <AppContent />
       </Router>
     </>
   )
 }
 
 export default App
+/* 
+  1 = Criar um controle de usuario, onde ele contrla cadastro de ourtos user se for o adm;
+  2 = Ao carregar a tela abrir o login se user não tiver logado;
+  
+*/

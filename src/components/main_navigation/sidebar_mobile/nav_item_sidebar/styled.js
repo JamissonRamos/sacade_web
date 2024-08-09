@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import { Theme } from "../../../../theme";
 
 export const WrapNav = styled.div`
@@ -92,7 +92,6 @@ export const DropdownLink = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: start;
-    
     border-radius: 8px;
     transition: 350ms;
     cursor: pointer;

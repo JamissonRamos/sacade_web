@@ -17,13 +17,16 @@ const Text = ({label, type, name, register, setValue, Icon, placeholder }) => {
     const [showPassword, setShowPassword] = useState(false);
 
     const handleFocus = () => setIsFocused(true);
+    
     const handleBlur = (event) => {
         const value = event.target.value;
         setIsFocused(value.trim() !== '');
+        console.log('sair');
     };
     const handleChange = (event) => {
         setValue(event.target.name, event.target.value, { shouldValidate: true });
         setIsFocused(true)
+       
     }
     const handleTogglePassword = () => {
         setShowPassword((prevState) => !prevState);

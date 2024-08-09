@@ -16,5 +16,3 @@ const ArrowShowSidebar = ({showSidebar, toggleSidebar}) => {
 }
 
 export default ArrowShowSidebar
-
-{/* onClick={toggleSidebar} */}

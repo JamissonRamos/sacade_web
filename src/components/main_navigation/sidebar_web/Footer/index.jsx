@@ -12,7 +12,6 @@ const Footer = () => {
                         <NavItemSidebar 
                             item={item} 
                             key={index} 
-                            // showSidebar={showSidebar}
                         />
                     : null
                 ))

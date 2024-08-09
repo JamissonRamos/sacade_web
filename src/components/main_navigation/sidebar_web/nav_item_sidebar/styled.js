@@ -8,7 +8,7 @@ export const WrapNav = styled.div`
     display: flex;
     flex-direction: column;
     padding: .2rem ;
-    background-color: ${({subnav}) => subnav ? Theme.colors.blue300 : null  };
+    background-color: ${({$subnav}) => $subnav ? Theme.colors.blue300 : null  };
 `;
 
 export const ItemMenu = styled(Link)`
@@ -61,7 +61,7 @@ export const LabelMenu = styled.div`
     color: ${Theme.colors.grey500};
     transition: display 0.4s; 
     @media (max-width: 768px) {
-        display: ${({showSidebar}) => showSidebar ? "none" : "flex"}
+        display: ${({$showSidebar}) => $showSidebar ? "none" : "flex"}
     }
 `;
 
@@ -92,7 +92,6 @@ export const DropdownLink = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: start;
-    
     border-radius: 8px;
     transition: 350ms;
     cursor: pointer;

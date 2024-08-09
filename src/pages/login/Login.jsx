@@ -53,13 +53,15 @@ const Login = () => {
                                 <Typography.Body level={'m'} color={Theme.colors.white800}>
                                     Você também pode fazer o acesso pelo Google, mas o seu email deve estar cadastrado no sistema.
                                 </Typography.Body>
-                                <Buttons.ButtonCustom 
-                                    $variant={'contained'} 
-                                    color={Theme.colors.yellow800}
-                                    icon={<FaGoogle/>}
-                                    onclick={onclick}
-                                    value={'Google'}
-                                />
+                                <S.WrapButton>
+                                    <Buttons.ButtonCustom 
+                                        $variant={'contained'} 
+                                        color={Theme.colors.yellow800}
+                                        icon={<FaGoogle/>}
+                                        onclick={onclick}
+                                        value={'Google'}
+                                    />
+                                </S.WrapButton>
                             </S.WrappedButtonGoogleText>
                         </S.ContentBody>
                         <S.ContentFooter>

@@ -1,4 +1,5 @@
 // import React from 'react'
+import * as S from './styled';
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 
@@ -12,16 +13,17 @@ import HelperText from "../../../components/helper/text";
 import Buttons from '../../../components/buttons';
 import Schema from './validation';
 
-import { MdPerson } from "react-icons/md";
-import { MdLock } from "react-icons/md";
 import WrapperFieldLink from "../../../components/Wrapper/link";
+import AllFields from "../../../components/all_fields";
+
+
 
 const FormLogin = () => {
 
       const { register, handleSubmit, setValue, formState:{ errors } } = useForm({ 
         mode: 'onBlur',
         resolver: yupResolver(Schema)
-    });
+      });
 
 
 
@@ -31,41 +33,45 @@ const FormLogin = () => {
     return (
       <Form onSubmit={handleSubmit(onSubmit)}>
         <WrapperFieldForm >
-          <Field.Text 
+          <AllFields.Text
+            level='m'
             label='Usuário' 
             type='text' 
             name='user' 
+            placeholder='Digite seu email'
+            Icon={Theme.Icons.MdPerson} 
             register={register} 
-            setValue={setValue}
-            Icon={MdPerson} 
-            placeholder='Digite somente o número do seu cpf'
           />
           <HelperText > { errors.user?.message } </HelperText>  
         </WrapperFieldForm>
         <WrapperFieldForm >
-          <Field.Text 
-            label='Senha' 
-            type='password'
-            name='password'
-            register={register}
-            setValue={setValue}
-            Icon={MdLock}
-            placeholder='Digite sua senha'
-          />
+            <AllFields.Text
+              level='m'
+              label='Senha' 
+              type='password' 
+              name='password' 
+              placeholder='Digite sua senha'
+              Icon={Theme.Icons.MdLock} 
+              register={register} 
+            />    
+          <HelperText > { errors.password?.message } </HelperText>
           <WrapperFieldLink>
             <Buttons.LinkCustom href="#" color={Theme.colors.green800}>
               Esqueceu sua Senha ?
             </Buttons.LinkCustom>
           </WrapperFieldLink>
-          <HelperText > { errors.password?.message } </HelperText>
+          
         </WrapperFieldForm>
         <WrapperFieldForm>
-                <Buttons.ButtonCustom 
-                  $variant={'outline'} 
-                  color={Theme.colors.green800} 
-                  value={'Fazer Login'} 
-                />
-            </WrapperFieldForm>
+          <S.WrapButton>
+            <Buttons.ButtonCustom 
+              $variant={'outline'} 
+              color={Theme.colors.green800} 
+              value={'Fazer Login'} 
+              
+            />
+          </S.WrapButton>
+        </WrapperFieldForm>
       </Form>
     )
 }

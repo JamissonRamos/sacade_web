@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Form = styled.form`
-    /* border: 1px solid blue; */
+    border: 1px solid blue;
     width: 100%;
     max-width: 600px;
     height: 100%;

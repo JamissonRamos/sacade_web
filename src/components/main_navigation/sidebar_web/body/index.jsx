@@ -8,16 +8,15 @@ const Body = ({showSidebar}) => {
         <S.Body>
             {
                 SidebarData
-                .filter(item => item.title !== 'Sair')
-                .map((item, index) => (
-                    <NavItemSidebar 
-                        item={item} 
-                        key={index} 
-                        showSidebar={showSidebar}
-                    />
-                ))
+                    .filter(item => item.title !== 'Sair')
+                    .map((item, index) => (
+                        <NavItemSidebar 
+                            item={item} 
+                            key={index} 
+                            showSidebar={showSidebar}
+                        />
+                    ))
             }
-
         </S.Body>
     )
 }

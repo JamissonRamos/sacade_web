@@ -30,41 +30,26 @@
 
         const handleFocus = () => {
             setIsFocused(true)
-            console.log('Foco');
-            
         };
         
         const handleBlur = (event) => {
 
-
-            console.log('Sair')
             const value = event.target.value || '';
-            console.log(value);
 
-
-            // //  Se o campo estiver vazio, define o valor como null
-            // if (value === '') {
-            //     setValue(name, null);
-            // }
-
-    // Verifique se o campo está vazio
-    if (value.trim() === '') {
-        console.log('1')
-        // Se o campo for vazio, defina como null apenas se o campo for explicitamente obrigatório
-        setValue(name, null); // Aqui consideramos que é opcional
-    } else {
-        console.log('2')
-        setValue(name, value.trim());
-    }
+            // Verifique se o campo está vazio
+            if (value.trim() === '') {
+                console.log('1')
+                // Se o campo for vazio, defina como null apenas se o campo for explicitamente obrigatório
+                setValue(name, null); // Aqui consideramos que é opcional
+            } else {
+                console.log('2')
+                setValue(name, value.trim());
+            }
     
             setIsFocused(value !== '');
-            console.log(value);
-            console.log(isFocused);
-
 
              // Chame o onBlur original do registerProps
             if (registerProps.onBlur) {
-                console.log('entrou')
                 registerProps.onBlur(event);
             }
 

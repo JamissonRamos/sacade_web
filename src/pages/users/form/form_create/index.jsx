@@ -36,7 +36,7 @@ const FormCreate = () => {
     const [alert, setAlert] = useState(null);
     const [msgBox, setMsgBox] = useState('');
 
-    const [fieldsToUnmask] = useState(['cpf', 'rg', 'phone', 'cep']);
+    const [fieldsToUnmask] = useState(['cpf', 'rg', 'phone', 'cep', 'uf']);
     const navigate = useNavigate();
     const { createUser, isLoading, errorSql } =  useUsers.useCreateUser();
     const { register, handleSubmit, setValue, reset, formState: { errors } } = useForm({
@@ -128,8 +128,8 @@ const FormCreate = () => {
                                                 label={field.label}
                                                 name={fieldKey}
                                                 maskInput={field.mask}
-                                                register={register} 
                                                 setValue={setValue} 
+                                                register={register} 
                                             />
                                         : 
                                             <AllFields.Text
@@ -139,8 +139,8 @@ const FormCreate = () => {
                                                 name={fieldKey}
                                                 placeholder={`Digite seu ${field.label.toLowerCase()}`}
                                                 maskInput={field.mask}
-                                                register={register} 
                                                 setValue={setValue}
+                                                register={register} 
                                             />  
                                         }
                                         <HelperText > { errors[fieldKey]?.message } </HelperText>
@@ -179,16 +179,9 @@ export default FormCreate
 /* 
     1 = quando esta no modulo mobile o actives não aparece, coloca eles para cima;
     2 = no camo email quando selecionado o campo fica obrigatorio tira isso e deixa não obrigatorio;
-    3 =  na hora de busca os dados e passar os dados para os campo aplicar as regras de mascaras;
-    4 = Ver como colocar os dado nos campos de select e data;
-    5 = Coloca o titulo do form de acordo o que vai fazer o no form edite ou cadastras;
-    6 = Criar um buttom de editar para ser colocado no lugar do salvar quando for para editar user;
-    7 = tenta criar regra de carrega pagina com o split paracerega os dados no campso
     8 =  quando o campo que tem masck é passo vazio da erro;
     9 = verificar erro de data, a data esta salvando 19940501;
-    10 =  criar a função do botão cancelar;
-    11 = resetar o form depois que os dados forem salvo, na hora de fechar o form e chamar na lista;
+
     * 12 = quando rento salva um cadastro e os campos de masca não tem nada a ser salvo a lib de mask da erro;
     11 = coloca o campo de uf para receber somente 2 letras maiscula;
-    13 = ao clicar no cancela ele da erro no submit;
     */

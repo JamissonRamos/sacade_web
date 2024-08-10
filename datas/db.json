@@ -27,6 +27,7 @@
   ],
   "users": [
     {
+      "uf": "Aa",
       "cep": "47474747",
       "status": "Ativo",
       "occupation": "Assistente",
@@ -42,7 +43,6 @@
       "number": "",
       "neighborhood": "",
       "city": "",
-      "uf": "",
       "reference": "",
       "id": "76df"
     },
@@ -154,6 +154,25 @@
       "uf": "",
       "reference": "",
       "id": "e112"
+    },
+    {
+      "status": "Desativado",
+      "occupation": "Assistente",
+      "gender": "Feminino",
+      "birthDate": "2024-08-10",
+      "cpf": "44444444444",
+      "lastName": "Aaa",
+      "name": "Aaa",
+      "rg": "4444444444",
+      "email": null,
+      "cep": "77777777",
+      "logadouro": "",
+      "number": "",
+      "neighborhood": "",
+      "city": "",
+      "uf": "",
+      "reference": "",
+      "id": "56cf"
     }
   ]
 }

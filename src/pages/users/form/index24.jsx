@@ -184,7 +184,7 @@ const FormUser = () => {
                                                 type={field.type ? field.type : 'text'}
                                                 name={fieldKey}
                                                 placeholder={`Digite seu ${field.label.toLowerCase()}`}
-                                                maskInput={field.mask}
+                                                // maskInput={field.mask}
                                                 register={register} 
                                                 setValue={setValue}
                                                 defaultValue={user ? user[fieldKey] : ''}

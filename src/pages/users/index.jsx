@@ -20,10 +20,12 @@ import { Cards } from '../../components/cards/index';
 import { useState } from 'react';
 import DeleteData from '../../components/alert_delete';
 
+
+
 const Users = () => {
   const isValueScreen = AllHooks.useScreenWidth(768);
   const { registered, isLoading, errorSql } = useUsers.useAllRegistrations();
-
+  
   if (isLoading) {
     return <Spinner />;
   }
@@ -53,9 +55,7 @@ const FilteredUsers = ({ isValueScreen }) => {
   const [deleteID, setDeleteID] = useState('')
 
   const handleDeleteData = (id, name, lastName) => {
-    console.log('id excluir 2: ', id)
     setIsVisibleModal((prevState) => !prevState);
-    console.log(isVisibleModal)
     setNameLastName(name + ' ' + lastName)
     setDeleteID(id)
   };

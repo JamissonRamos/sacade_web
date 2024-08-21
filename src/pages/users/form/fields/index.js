@@ -32,9 +32,9 @@ export const FieldsTemplete = {
             type: 'select', 
             //value: "",
             options: [
-                { value: 'Administrador', label: 'Administrador' },
-                { value: 'Professor', label: 'Professor' },
-                { value: 'Assistente', label: 'Assistente' },
+                { value: 1, label: 'Administrador' },
+                { value: 2, label: 'Professor' },
+                { value: 3, label: 'Assistente' },
             ],
         },
         status: {
@@ -60,7 +60,11 @@ export const FieldsTemplete = {
     },
     eighth:
     {
-        uf: {label: 'UF', value: ""},
+        uf: {label: 'UF',  mask: 'uf', value: ""},
         reference: {label: 'Referência',  column: 2, value: ""}
+    },
+    ninth:
+    {
+        password: {label: 'Senha', value: ""},
     }
 };

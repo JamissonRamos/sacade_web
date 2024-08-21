@@ -47,24 +47,25 @@
       "id": "76df"
     },
     {
-      "id": "32b0",
       "status": "Ativo",
       "occupation": "Administrador",
       "gender": "Masculino",
-      "cep": "77777777",
-      "email": "carol@gmail.com",
-      "phone": "77777777777",
       "birthDate": "1999-09-07",
-      "rg": "8888888888",
       "cpf": "77777777777",
       "lastName": "Dos santos",
       "name": "Carol",
+      "rg": "8888888888",
+      "email": "carol@gmail.com",
+      "cep": "77777777",
+      "phone": "77777777777",
       "logadouro": "",
       "number": "",
       "neighborhood": "",
       "city": "",
       "uf": "",
-      "reference": ""
+      "reference": "",
+      "password": "",
+      "id": "32b0"
     },
     {
       "id": "775b",
@@ -154,25 +155,6 @@
       "uf": "",
       "reference": "",
       "id": "e112"
-    },
-    {
-      "status": "Desativado",
-      "occupation": "Assistente",
-      "gender": "Feminino",
-      "birthDate": "2024-08-10",
-      "cpf": "44444444444",
-      "lastName": "Aaa",
-      "name": "Aaa",
-      "rg": "4444444444",
-      "email": null,
-      "cep": "77777777",
-      "logadouro": "",
-      "number": "",
-      "neighborhood": "",
-      "city": "",
-      "uf": "",
-      "reference": "",
-      "id": "56cf"
     }
   ]
 }

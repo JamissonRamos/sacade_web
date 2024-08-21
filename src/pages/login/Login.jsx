@@ -1,4 +1,4 @@
-// import React from "react";
+import React from "react";
 
 //IMG & ICON
 import logo from "../../assets/login/logo_luta.png";

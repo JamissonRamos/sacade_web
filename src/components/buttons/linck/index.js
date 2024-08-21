@@ -9,7 +9,7 @@ const LinkCustom = styled.a `
     justify-content: center;
     padding: 0 0.2rem;
     background-color: transparent;
-    font-size: .6em;
+    font-size: .7em;
     font-weight: 500;
     color: ${props => props.color};
     text-decoration: none;
@@ -27,11 +27,11 @@ const LinkCustom = styled.a `
 
         
     }
-
-    svg {
+    //Foi retirado por modificar o styled do componente link opcoes de sair do sidebar
+    /* svg {
         margin-right: 8px;
         font-size: .6em;
-    }
+    } */
 `
 
 export default LinkCustom;

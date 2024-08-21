@@ -1,7 +1,7 @@
 
-export const useFirebaseIDSelect = async (url) =>{
+export const useServerDbIDSelect = async (url) =>{
 
-    const fetchFirebase = async () => {
+    const fetchServerDb = async () => {
         try {
             const response = await fetch(url);
             if (!response.ok) {
@@ -16,7 +16,7 @@ export const useFirebaseIDSelect = async (url) =>{
         } 
     };
 
-    return await fetchFirebase(); // Retorna a promessa com os dados
+    return await fetchServerDb(); // Retorna a promessa com os dados
 }
 
 /* 

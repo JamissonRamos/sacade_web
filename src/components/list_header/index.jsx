@@ -14,7 +14,6 @@ const ListHeader = ({title, subTitle}) => {
     const navigate = useNavigate();
     const handleShowForm = () => {
         navigate('/users/form/form_create'); // Substitua pelo caminho da página que você quer navegar
-        console.log('Clicou no btn novo')
     };
 
     return (

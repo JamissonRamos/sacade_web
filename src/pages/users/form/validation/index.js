@@ -36,11 +36,10 @@ const Schema = yup.object().shape({
     //     .min(11, 'Campo Celular deve ter no mínimo 11 caracteres.')
     //     .max(16, 'Campo Celular deve ter no máximo 16 caracteres.')
     //     .matches(/^\(\d{2}\) \d \d{4}-\d{4}$/, 'Número de telefone inválido'),
-    // email: yup
-    //     .string()
-    //     .nullable()
-    //     .notRequired()
-    //     .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'E-mail inválido'),
+    email: yup
+        .string()
+        .matches(/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/, 'E-mail inválido')
+        .required('Campo Email é obrigatório'),
     gender: yup
         .string()
         .required('Campo Gênero é obrigatório'),

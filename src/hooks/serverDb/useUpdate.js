@@ -1,5 +1,5 @@
 
-export const useFirebaseUpdate = async (url, newData) => {
+export const useServerDbUpdate = async (url, newData) => {
     try {
         const response = await fetch(url, {
             method: 'PUT', // ou 'PATCH', dependendo da sua API

@@ -7,6 +7,7 @@ import Users from "./users";
 import ChangePassword from "./change_password";
 import FormUpdate from "./users/form/form_update/index";
 import FormCreate from "./users/form/form_create/index";
+import NoticeAuthorization from "./notice_authorization";
 
 export const Pages = {
     Home,
@@ -17,5 +18,6 @@ export const Pages = {
     FormUpdate,
     FormCreate,
     //FormUser,
-    ChangePassword
+    ChangePassword,
+    NoticeAuthorization
 }

@@ -47,7 +47,6 @@
             //     });
             // } else {
                 setSelectedValue(value);
-                console.log(selectedValue)
                 setValue(name, value);
                 // Chame o onChange original do register
                 onChangeRegister({

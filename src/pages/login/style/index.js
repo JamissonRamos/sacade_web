@@ -78,7 +78,7 @@ export const PanelLeft = styled.div`
         box-shadow: ${Theme.shadow.sh700};        
     }
     @media (max-width: 425px) {
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
         height: 28%;
         gap: .4rem;
         padding: 0;
@@ -151,7 +151,7 @@ export const WrappedButtonGoogleText = styled.div`
 `;
 export const WrapButton = styled.div`
     /* border: 1px solid red; */
-    width: 100%;
+    width: 50%;
     height: 42px;
     display: flex;
     align-items: center;

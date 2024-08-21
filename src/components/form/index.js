@@ -10,6 +10,7 @@ const Form = styled.form`
     align-items: center;
     justify-content: space-evenly;
     gap: .8rem; 
+    padding: 0 .4rem;
 `;
 
 export default Form;

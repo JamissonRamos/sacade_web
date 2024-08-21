@@ -1,5 +1,5 @@
 import { useEffect, useState, useCallback } from "react";
-import { useFirebase } from "../firebase";
+import { useServeDb } from "../serverDb";
 
 export const useAllRegistrations = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -13,7 +13,7 @@ export const useAllRegistrations = () => {
         setIsLoading(true);
         setErrorSql(null);
         try {
-            const data = await useFirebase.useFirebaseAllSelect('http://localhost:3000/alunos');
+            const data = await useServeDb.useServerDbAllSelect('http://localhost:3000/alunos');
             setAlunos(data);
             localStorage.setItem('alunos', JSON.stringify(data));
         } catch (error) {

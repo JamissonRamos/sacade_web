@@ -1,5 +1,6 @@
 import { useEffect, useState, useCallback } from "react";
-import { useFirebase } from "../firebase";
+import { useServeDb  } from "../serverDb";
+import { useFirabaseCustom  } from "../firabase";
 
 export const useAllRegistrations = () => {
     const [isLoading, setIsLoading] = useState(false);
@@ -8,12 +9,20 @@ export const useAllRegistrations = () => {
         const savedRegistered = localStorage.getItem('users');
         return savedRegistered ? JSON.parse(savedRegistered) : [];
     });
+    const { allSelect, documents, errorSql: errorApi } = useFirabaseCustom.useFirebaseAllSelect('users');
 
     const fetchUsers = useCallback(async () => {
         setIsLoading(true);
         setErrorSql(null);
         try {
-            const data = await useFirebase.useFirebaseAllSelect('http://localhost:3000/users');
+
+            const data = await allSelect();    
+            if (errorApi){
+                setErrorSql(errorApi);
+                return
+            }
+            console.log(data)
+            // const data = await useServeDb.useServerDbAllSelect('http://localhost:3000/users');
             localStorage.setItem('users', JSON.stringify(data));
             setRegistered(data);
         } catch (error) {
@@ -22,7 +31,7 @@ export const useAllRegistrations = () => {
         } finally {
             setIsLoading(false);
         }
-    }, []);
+    }, [allSelect]);
 
     useEffect(() => {
         const savedRegistered = localStorage.getItem('users');

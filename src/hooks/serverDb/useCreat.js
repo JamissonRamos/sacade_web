@@ -1,5 +1,5 @@
-export const useFirebaseInsert = async (url, userData) => {
-    const insertFirebase = async () => {
+export const useServerDbInsert = async (url, userData) => {
+    const insertServerDb = async () => {
         try {
             const response = await fetch(url, {
                 method: 'POST',
@@ -20,5 +20,5 @@ export const useFirebaseInsert = async (url, userData) => {
         }
     };
 
-    return await insertFirebase(); // Retorna a promessa com os dados
+    return await insertServerDb(); // Retorna a promessa com os dados
 };

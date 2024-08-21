@@ -20,6 +20,7 @@ import AllFields from '../../../../components/all_fields';
 import HelperText from '../../../../components/helper/text';
 import { Spinner } from '../../../../components/loading_custom';
 import AlertCustom from '../../../../components/alert';
+import { useFirabaseCustom } from '../../../../hooks/firabase';
 
 
 
@@ -70,10 +71,13 @@ const FormUpdate = () => {
     const [alert, setAlert] = useState(null);
     const [msgBox, setMsgBox] = useState('');
     const [fieldsToUnmask] = useState(['cpf', 'rg', 'phone', 'cep']);
+    const [fieldsToHide] = useState(['email', 'password']); //Campos a ser ocultados
     const { id: idUrl } = useParams(); // Extrai o ID da URL
     const navigate = useNavigate();
     const { user, isLoading: loadingID, errorSql: errorID} = useUsers.useIDRegistrations(idUrl);
-    // const { createUser, isLoading, errorSql } =  useUsers.useCreateUser();
+  
+
+
     const { updateUser, isLoading: loadingUpdate, errorSql: errorUpdate} = useUsers.useUpdate();
     const { register, handleSubmit, setValue, reset, formState: { errors } } = useForm({
         mode: 'all',
@@ -96,27 +100,28 @@ const FormUpdate = () => {
         for (const [key, value] of Object.entries(data)) {
             if (fieldsToUnmask.includes(key)) {
                 value ? cleanedValues[key] = unMask(value) : null;
-            } else if (typeof value === 'string' && key !== 'email') {
+            } else if (typeof value === 'string' && key !== 'email' && key !== 'id') {
                 cleanedValues[key] = capitalizeFirstLetter(value);
             }else if (key == 'birthDate') {
                 const dateValue = formatDate(value);
                 console.log(dateValue)
                 cleanedValues[key] = dateValue 
-                //const formattedDate = formatDate(defaultValue);
-
             }else {
                 cleanedValues[key] = value;
             }
         }
+        
         let result;
-        console.log('Atualizar')
-        console.log('Novo valor: ', cleanedValues)
         result = await updateUser(idUrl, cleanedValues);
 
         if (result) {
             reset ()
             setMsgBox('Cadastro Atualizado com sucesso')
             setAlert(true)
+            setTimeout(() => {
+                navigate('/users');
+            }, 2000);
+        }else{
             setTimeout(() => {
                 navigate('/users');
             }, 2000);
@@ -143,9 +148,9 @@ const FormUpdate = () => {
     }, [user, setValue, fieldsToUnmask]);
 
     
-    if (loadingID || loadingUpdate) {
-        return <Spinner />;
-    }
+    // if (loadingID || loadingUpdate) {
+    //     return <Spinner />;
+    // }
 
     return (
 
@@ -160,101 +165,87 @@ const FormUpdate = () => {
             <Typography.Headline level='s' color={Theme.colors.green800} >
                 Atualizar Usuários
             </Typography.Headline>
-            <S.Form onSubmit={handleSubmit(onSubmit)}>
-                <S.WrapInputsContainer> 
-                    {
-                        FieldsTemplete &&
 
-                        Object.entries(FieldsTemplete).map(([sectionKey, sectionValue]) => (
-
-                            <S.WrapRowInputs key={sectionKey}>
-                                
-                                {Object.entries(sectionValue).map(([fieldKey, field]) => (
-                                    <S.WrapInput key={fieldKey} $flex={field.column}>
-
-                                        { field.type === 'select' ?
-                                            <AllFields.SelectCustom
-                                                level='n'
-                                                label={field.label}
-                                                name={fieldKey}
-                                                maskInput={field.mask}
-                                                register={register} 
-                                                setValue={setValue} 
-                                                options={field.options}
-                                                defaultValue={user ? user[fieldKey] : ''}
-                                            />
-                                        : field.type  === 'date' ?
-                                            <AllFields.Date
-                                                level='n'
-                                                label={field.label}
-                                                name={fieldKey}
-                                                maskInput={field.mask}
-                                                register={register} 
-                                                setValue={setValue} 
-                                                defaultValue={user ? user[fieldKey] : ''}
-                                            />
-                                        : 
-                                            <AllFields.Text
-                                                level='n'
-                                                label={field.label}
-                                                type={field.type ? field.type : 'text'}
-                                                name={fieldKey}
-                                                placeholder={`Digite seu ${field.label.toLowerCase()}`}
-                                                maskInput={field.mask}
-                                                register={register} 
-                                                setValue={setValue}
-                                                defaultValue={user ? user[fieldKey] : ''}
-                                            />  
-                                        }
-                                        <HelperText > { errors[fieldKey]?.message } </HelperText>
-                                    </S.WrapInput>
-                                ))}
-                            </S.WrapRowInputs>
-                        ))
-                    }
-                    
-                    <S.WrapButtonActions>
+            {loadingID || loadingUpdate ? 
+                <Spinner /> :
+                <S.Form onSubmit={handleSubmit(onSubmit)}>
+                    <S.WrapInputsContainer> 
+                        {
+                            FieldsTemplete &&
+                                Object.entries(FieldsTemplete).map(([sectionKey, sectionValue]) => (
+                                    <S.WrapRowInputs key={sectionKey}>
+                                        {Object.entries(sectionValue).map(([fieldKey, field]) => (
+                                            //Email e Password ser alterado no for de perfil
+                                            !fieldsToHide.includes(fieldKey) ? 
+                                            <S.WrapInput key={fieldKey} $flex={field.column}>
+                                                { field.type === 'select' ?
+                                                    <AllFields.SelectCustom
+                                                        level='n'
+                                                        label={field.label}
+                                                        name={fieldKey}
+                                                        maskInput={field.mask}
+                                                        register={register} 
+                                                        setValue={setValue} 
+                                                        options={field.options}
+                                                        defaultValue={user ? user[fieldKey] : ''}
+                                                    />
+                                                : field.type  === 'date' ?
+                                                    <AllFields.Date
+                                                        level='n'
+                                                        label={field.label}
+                                                        name={fieldKey}
+                                                        maskInput={field.mask}
+                                                        register={register} 
+                                                        setValue={setValue} 
+                                                        defaultValue={user ? user[fieldKey] : ''}
+                                                    />
+                                                : 
+                                                    <AllFields.Text
+                                                        level='n'
+                                                        label={field.label}
+                                                        type={field.type ? field.type : 'text'}
+                                                        name={fieldKey}
+                                                        placeholder={`Digite seu ${field.label.toLowerCase()}`}
+                                                        maskInput={field.mask}
+                                                        register={register} 
+                                                        setValue={setValue}
+                                                        defaultValue={user ? user[fieldKey] : ''}
+                                                    />  
+                                                }
+                                                <HelperText > { errors[fieldKey]?.message } </HelperText>
+                                            </S.WrapInput> : null
+                                        ))}
+                                    </S.WrapRowInputs>
+                                ))
+                        }
                         
-                        <S.WrapButton>
-                            <Buttons.ButtonCustom 
-                                $variant={'contained'} 
-                                type='submit' 
-                                color={Theme.colors.green800} 
-                                value={'Atualizar'}  
-                                disabled={loadingID || loadingUpdate ? true : false}/>
-                        </S.WrapButton>
-                        <S.WrapButton>
-                            <Buttons.ButtonCustom 
-                                $variant={'outline'} 
-                                type='button' 
-                                color={Theme.colors.red800} 
-                                value={'Cancelar'} 
-                                disabled={loadingID || loadingUpdate ? true : false}
-                                onclick={handleCancel}
-                                />
-                        </S.WrapButton>
-                        
-                    </S.WrapButtonActions>
-                </S.WrapInputsContainer>
-            </S.Form>
+                        <S.WrapButtonActions>
+                            
+                            <S.WrapButton>
+                                <Buttons.ButtonCustom 
+                                    $variant={'contained'} 
+                                    type='submit' 
+                                    color={Theme.colors.green800} 
+                                    value={'Atualizar'}  
+                                    disabled={loadingID || loadingUpdate ? true : false}/>
+                            </S.WrapButton>
+                            <S.WrapButton>
+                                <Buttons.ButtonCustom 
+                                    $variant={'outline'} 
+                                    type='button' 
+                                    color={Theme.colors.red800} 
+                                    value={'Cancelar'} 
+                                    disabled={loadingID || loadingUpdate ? true : false}
+                                    onclick={handleCancel}
+                                    />
+                            </S.WrapButton>
+                            
+                        </S.WrapButtonActions>
+                    </S.WrapInputsContainer>
+                </S.Form>
+            }
         </WarapperMainPage>
     )
 }
 
 export default FormUpdate
-
-
-/* 
-    1 = quando esta no modulo mobile o actives não aparece, coloca eles para cima;
-    2 = no camo email quando selecionado o campo fica obrigatorio tira isso e deixa não obrigatorio;
-    3 =  na hora de busca os dados e passar os dados para os campo aplicar as regras de mascaras;
-    4 = Ver como colocar os dado nos campos de select e data;
-    5 = Coloca o titulo do form de acordo o que vai fazer o no form edite ou cadastras;
-    6 = Criar um buttom de editar para ser colocado no lugar do salvar quando for para editar user;
-    7 = tenta criar regra de carrega pagina com o split paracerega os dados no campso
-    8 =  quando o campo que tem masck é passo vazio da erro;
-    9 = verificar erro de data, a data esta salvando 19940501;
-    10 =  criar a função do botão cancelar;
-    11 = coloca o campo de uf para receber somente 2 letras maiscula;
-
-    */

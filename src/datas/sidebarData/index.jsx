@@ -46,8 +46,8 @@ export const SidebarData = [
     },
     {
         title: 'Sair',
-        path: '/login',
-        icon: <Theme.Icons.MdLogout  /> 
+        path: '#',
+        icon: <Theme.Icons.MdLogout />,
     },
     
 ];

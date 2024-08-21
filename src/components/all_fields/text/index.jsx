@@ -38,11 +38,9 @@
 
             // Verifique se o campo está vazio
             if (value.trim() === '') {
-                console.log('1')
                 // Se o campo for vazio, defina como null apenas se o campo for explicitamente obrigatório
                 setValue(name, null); // Aqui consideramos que é opcional
             } else {
-                console.log('2')
                 setValue(name, value.trim());
             }
     
@@ -61,13 +59,11 @@
         
         const handleChange = (event) => {
             const value = unMask(event.target.value);
-            console.log(value);
             if (maskInput) {
                 const typeMask = useMasksCustom[maskInput];
                 const maskedValue = mask(value, typeMask); // Adapte a máscara conforme necessário
                 setValue(name, maskedValue);
-                console.log(maskedValue);
-                
+
                 // Chame o onChange original do register
                 onChangeRegister({
                     target: {

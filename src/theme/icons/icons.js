@@ -1,6 +1,7 @@
 import * as MD from "react-icons/md";
 import * as RiIcons from 'react-icons/ri';
 import * as Fa6 from "react-icons/fa6";
+import * as IM from "react-icons/im";
 
 export const Icons = {  
 
@@ -19,6 +20,7 @@ export const Icons = {
     MdAdd:                      MD.MdAdd,
     MdClose:                    MD.MdClose,
     MdLock:                     MD.MdLock,
+    MdLockPerson:               MD.MdLockPerson,
     MdVisibility:               MD.MdVisibility,
     MdVisibilityOff:            MD.MdVisibilityOff,
     MdSettings:                 MD.MdSettings,
@@ -27,7 +29,9 @@ export const Icons = {
     MdContactPhone:             MD.MdContactPhone,
     MdArrowForward:             MD.MdArrowForward,
     MdArrowBack:                MD.MdArrowBack,
+    MdCancel:                   MD.MdCancel,
     RiArrowDownSFill:           RiIcons.RiArrowDownSFill,
     RiArrowUpSFill:             RiIcons.RiArrowUpSFill,
-    FaMapLocationDot:           Fa6.FaMapLocationDot
+    FaMapLocationDot:           Fa6.FaMapLocationDot,
+    ImSwitch:                   IM.ImSwitch
 }

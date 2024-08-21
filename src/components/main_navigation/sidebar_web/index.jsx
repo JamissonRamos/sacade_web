@@ -11,8 +11,9 @@ const SidebarWeb = ({showSidebar, toggleSidebar}) => {
         <S.Sidebar color={Theme.colors.blue600} $showSidebar={showSidebar}>
             <Header showSidebar={showSidebar}/>
             <Body showSidebar={showSidebar}/>
-            <Footer />
+            <Footer showSidebar={showSidebar} />
             <ArrowShowSidebar showSidebar={showSidebar} toggleSidebar={toggleSidebar}/>
+           
         </S.Sidebar>
     )
 }

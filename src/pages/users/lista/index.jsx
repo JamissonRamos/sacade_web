@@ -11,6 +11,8 @@ import { useNavigate } from 'react-router-dom';
 
 
 const TableRecords = ({data, handleDeleteData}) => {
+    console.log(data);
+    
     const navigate = useNavigate();
     const handleShowForm = (id) => {
         navigate(`/users/form/form_update/${id}`); // Substitua pelo caminho da página que você quer navegar
@@ -35,9 +37,9 @@ const TableRecords = ({data, handleDeleteData}) => {
             <S.TableBody>
                 {
                     data && 
-                        data.map(({id, name, lastName, status}) => (
+                        data.map(({uid, name, lastName, status}) => (
                             
-                            <S.TableRow key={id}>
+                            <S.TableRow key={uid}>
                                 <S.TableCell $flex={2}>
                                     <S.CircleLetterName>
                                         {name.charAt(0)}
@@ -56,7 +58,7 @@ const TableRecords = ({data, handleDeleteData}) => {
                                             value={'Excluir'}
                                             color={Theme.colors.red800} 
                                             icon={<Theme.Icons.MdDelete/> }
-                                            onclick={() => handleDeleteData(id, name, lastName)}
+                                            onclick={() => handleDeleteData(uid, name, lastName)}
                                         />
                                     </S.WrapButton>
                                     <S.WrapButton>
@@ -65,7 +67,7 @@ const TableRecords = ({data, handleDeleteData}) => {
                                             value={'Editar'}
                                             color={Theme.colors.blue800} 
                                             icon={<Theme.Icons.MdEdit/> }
-                                            onclick={() => handleShowForm(id)}
+                                            onclick={() => handleShowForm(uid)}
                                         />
                                     </S.WrapButton>
                                 </S.TableCell>

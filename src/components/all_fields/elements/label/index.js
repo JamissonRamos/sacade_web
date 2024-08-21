@@ -10,22 +10,22 @@ const standardSizes = {
         lineHeight:     '28px',
     },
     m: {
-        top:            '24%',
+        top:            '20%',
         fontsize:       '18px', 
         letterSpacing:  '0.1px', 
         fontWeights:    '500', 
         lineHeight:     '20px',
     },
     n: {
-        top:           '24%',
+        top:           '20%',
         fontsize:      '16px', 
         letterSpacing: '0.5px', 
         fontWeights:   '500', 
         lineHeight:    '16px',
     }, 
     s: {
-        top:           '26%',
-        fontsize:      '14px', 
+        top:           '19%',
+        fontsize:      '12px', 
         letterSpacing:  '0.5px', 
         fontWeights:    '500', 
         lineHeight:     '16px',
@@ -61,7 +61,7 @@ const Label = styled.label`
         padding: 0 4px;
         background-color: ${Theme.colors.white800};
         /* formatação do size vai ate 14px caso o level seja s deixa a font menor  */
-        font-size: ${$level === 's' ? '12px' :`${parseInt(standardSizes.s.fontsize, 10) - 3}px`};
+        font-size: ${$level === 's' ? '12px' :`${parseInt(standardSizes.s.fontsize, 10) - 2}px`};
         color: ${Theme.colors.green800};
     ` 
     }

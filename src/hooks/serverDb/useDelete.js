@@ -1,5 +1,5 @@
 
-export const useFirebaseDelete = async (url) => {
+export const useServerDbDelete = async (url) => {
     try {
         const response = await fetch(url, {
             method: 'DELETE',

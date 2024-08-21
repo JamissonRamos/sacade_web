@@ -4,6 +4,7 @@ const useMasksCustom = {
     phone:  '(99) 9 9999-9999',
     date:   '99/99/9999',
     cep:    '99999-999',
+    uf:      'AA',
     // Adicione mais máscaras conforme necessário
 };
 

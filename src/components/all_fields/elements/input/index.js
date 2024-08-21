@@ -41,7 +41,10 @@ const Input = styled.input`
     border: 1px solid ${Theme.colors.grey600};
     border-radius: 8px;
     outline: none;
-    text-transform: capitalize;
+    text-transform: ${({name}) => 
+        name == 'uf' ? 'uppercase' : 
+        name == 'email' ? 'lowercase' :  
+        name == 'password' ? 'none' : 'capitalize'} ;
     transition:  outline 0.9s, border-color 0.3s;
     ${({ $level, type }) => {
         const { height, fontSize, letterSpacing, fontWeight, lineHeight } = inputSizes[$level] || inputSizes.n; // Default to 'm' if level is not provided

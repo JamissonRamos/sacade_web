@@ -14,9 +14,7 @@ const DeleteData =   ({id, nameLastName, handleDeleteData }) => {
     console.log(nameLastName)
     const handleDelete = async (id) => {
 
-        let result = await deleteUser(id)
-        console.log(result);
-
+        let result = await deleteUser('users', id)
         if (result) {
             setMsgBox('Cadastro excluído com sucesso')
             setAlert(true)
